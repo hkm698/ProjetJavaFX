@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fsiAdministration.controllers.AjouterEtudiantController"
+            prefHeight="500.0" prefWidth="700.0">
+
+   <VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="700.0" prefHeight="500.0">
+
+      <!-- Barre de menu -->
+      <MenuBar prefHeight="26.0" prefWidth="700.0">
+         <menus>
+            <Menu fx:id="gestionEtud" text="Gestion étudiant">
+               <items>
+                  <MenuItem fx:id="bListeEtud" onAction="#bListEtudClick" text="Liste des étudiants" />
+                  <MenuItem fx:id="bAjouterEtud" onAction="#bAjouterEtudClick" text="Ajouter un étudiant" />
+               </items>
+            </Menu>
+            <Menu fx:id="gestionSection" text="Gestion section">
+               <items>
+                  <MenuItem fx:id="bListeSection" onAction="#bListeSectionClick" text="Liste des sections" />
+                  <MenuItem fx:id="bAjouterSection" onAction="#bAjouterSectionClick" text="Ajouter une section" />
+               </items>
+            </Menu>
+            <Menu fx:id="gestionCours" text="Gestion Cours">
+               <items>
+                  <MenuItem fx:id="bListeCours" onAction="#bListeCoursClick" text="Liste des cours" />
+                  <MenuItem fx:id="bAjouterCours" onAction="#bAjouterCoursClick" text="Ajouter un cours" />
+               </items>
+            </Menu>
+            <Menu fx:id="bAutres" text="Autres">
+               <items>
+                  <MenuItem fx:id="bAccueil" onAction="#bAccueilClick" text="Accueil" />
+                  <MenuItem fx:id="bQuitter" onAction="#bQuitterClick" text="Quitter" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+
+      <!-- Formulaire d'ajout -->
+      <VBox alignment="CENTER" spacing="12.0" layoutX="100.0" layoutY="50.0" prefWidth="500">
+         <Label text="Ajout d’un nouvel étudiant"
+                style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+
+         <TextField fx:id="tfNomEtud" promptText="Nom de l'étudiant" maxWidth="300"/>
+         <TextField fx:id="tfPrenomEtud" promptText="Prénom de l'étudiant" maxWidth="300"/>
+         <DatePicker fx:id="dtNaissance" promptText="Date de naissance" maxWidth="300"/>
+
+         <!-- Liste déroulante pour les sections -->
+         <ComboBox fx:id="cbSectionEtud" promptText="Sélectionner une section" prefWidth="300.0" />
+
+         <HBox spacing="10.0" alignment="CENTER">
+            <Button fx:id="bEnregistrer" text="Enregistrer" onAction="#bEnregistrerClick"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;" />
+            <Button fx:id="bEffacer" text="Effacer" onAction="#bEffacerClick"
+                    style="-fx-background-color: #f39c12; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;"/>
+            <Button fx:id="bRetour" text="Retour" onAction="#handleRetour"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;"/>
+         </HBox>
+      </VBox>
+
+   </VBox>
+</AnchorPane>

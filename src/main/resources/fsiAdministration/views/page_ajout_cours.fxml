@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="fsiAdministration.controllers.AjouterCoursController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox alignment="TOP_CENTER" spacing="15.0" prefWidth="600.0" prefHeight="400.0">
+        <!-- Menu commun à toutes les pages -->
+        <MenuBar prefHeight="26.0" prefWidth="600.0">
+            <menus>
+                <Menu fx:id="gestionEtud" mnemonicParsing="false" text="Gestion étudiant">
+                    <items>
+                        <MenuItem fx:id="bListeEtud" mnemonicParsing="false" onAction="#bListEtudClick" text="Liste des étudiants" />
+                        <MenuItem fx:id="bAjouterEtud" mnemonicParsing="false" onAction="#bAjouterEtudClick" text="Ajouter un étudiant" />
+                    </items>
+                </Menu>
+                <Menu fx:id="gestionSection" mnemonicParsing="false" text="Gestion section">
+                    <items>
+                        <MenuItem fx:id="bListeSection" mnemonicParsing="false" onAction="#bListeSectionClick" text="Liste des sections" />
+                        <MenuItem fx:id="bAjouterSection" mnemonicParsing="false" onAction="#bAjouterSectionClick" text="Ajouter une section" />
+                    </items>
+                </Menu>
+                <Menu fx:id="gestionCours" mnemonicParsing="false" text="Gestion Cours">
+                    <items>
+                        <MenuItem fx:id="bListeCours" mnemonicParsing="false" onAction="#bListeCoursClick" text="Liste des cours" />
+                        <MenuItem fx:id="bAjouterCours" mnemonicParsing="false" onAction="#bAjouterCoursClick" text="Ajouter un cours" />
+                    </items>
+                </Menu>
+                <Menu fx:id="bAutres" mnemonicParsing="false" text="Autres">
+                    <items>
+                        <MenuItem fx:id="bAccueil" mnemonicParsing="false" onAction="#bAccueilClick" text="Accueil" />
+                        <MenuItem fx:id="bQuitter" mnemonicParsing="false" onAction="#bQuitterClick" text="Quitter" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- Contenu principal -->
+        <VBox alignment="CENTER" spacing="15.0" layoutX="100.0" layoutY="50.0" prefWidth="400">
+            <Label text="Ajouter un cours à une section"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+            <TextField fx:id="tfLibelleCours" promptText="Libellé du cours" maxWidth="300"/>
+            <TextField fx:id="tfDescriptionCours" promptText="Description du cours" maxWidth="300"/>
+            <ComboBox fx:id="cbSections" promptText="Sélectionner une section" prefWidth="300" />
+            <Button text="Ajouter" onAction="#ajouterCours"
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;"
+            />
+            <Button text="Retour" onAction="#handleRetour"
+                    style="-fx-background-color: #c0392b; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;"/>
+        </VBox>
+    </VBox>
+</AnchorPane>

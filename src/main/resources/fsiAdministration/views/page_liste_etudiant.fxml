@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<Pane prefHeight="478.0" prefWidth="729.0"
+      xmlns="http://javafx.com/javafx/22"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fsiAdministration.controllers.ListeEtudiantController">
+    <children>
+        <VBox layoutX="-1.0" prefHeight="478.0" prefWidth="729.0">
+
+            <!-- Menu principal -->
+            <MenuBar prefHeight="26.0" prefWidth="711.0">
+                <menus>
+                    <Menu fx:id="gestionEtud" mnemonicParsing="false" text="Gestion étudiant">
+                        <items>
+                            <MenuItem fx:id="bListeEtud" mnemonicParsing="false" onAction="#bListEtudClick" text="Liste des étudiants" />
+                            <MenuItem fx:id="bAjouterEtud" mnemonicParsing="false" onAction="#bAjouterEtudClick" text="Ajouter un étudiant" />
+                        </items>
+                    </Menu>
+
+                    <Menu fx:id="gestionSection" mnemonicParsing="false" text="Gestion section">
+                        <items>
+                            <MenuItem fx:id="bListeSection" mnemonicParsing="false" onAction="#bListeSectionClick" text="Liste des sections" />
+                            <MenuItem fx:id="bAjouterSection" mnemonicParsing="false" onAction="#bAjouterSectionClick" text="Ajouter une section" />
+                        </items>
+                    </Menu>
+
+                    <Menu fx:id="gestionCours" mnemonicParsing="false" text="Gestion Cours">
+                        <items>
+                            <MenuItem fx:id="bListeCours" mnemonicParsing="false" onAction="#bListeCoursClick" text="Liste des Cours" />
+                            <MenuItem fx:id="bAjouterCours" mnemonicParsing="false" onAction="#bAjouterCoursClick" text="Ajouter un Cours" />
+                        </items>
+                    </Menu>
+
+                    <Menu fx:id="bAutres" mnemonicParsing="false" text="Autres">
+                        <items>
+                            <MenuItem fx:id="bAccueil" mnemonicParsing="false" onAction="#bAccueilClick" text="Accueil" />
+                            <MenuItem fx:id="bQuitter" mnemonicParsing="false" onAction="#bQuitterClick" text="Quitter" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+
+            <Label text="Liste des Étudiants"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"
+                   alignment="CENTER"
+                   maxWidth="Infinity"
+                   textAlignment="CENTER" />
+
+
+            <!-- Table des étudiants -->
+            <TableView fx:id="tvEtudiants" prefHeight="259.0" prefWidth="730.0"
+                       style="-fx-background-color: white; -fx-border-color: #3e8e41; -fx-border-width: 1;">
+                <columns>
+                    <TableColumn fx:id="tcNomEtud" prefWidth="143.2" text="Nom étudiant" />
+                    <TableColumn fx:id="tcPrenomEtud" prefWidth="148.0" text="Prénom étudiant" />
+                    <TableColumn fx:id="tcDateNaissance" prefWidth="180.0" text="Date de naissance" />
+                    <TableColumn fx:id="tcSectionEtud" prefWidth="100.0" text="Section" />
+                    <TableColumn fx:id="tcActions" prefWidth="150.0" text="Actions" />
+                </columns>
+            </TableView>
+
+
+            <!-- ComboBox de filtrage -->
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Filtrer par section :" style="-fx-text-fill: white;" />
+                <ComboBox fx:id="cbSections" promptText="Toutes les sections" prefWidth="200.0"/>
+                <Button fx:id="btnRetour" text="Tous les étudiants" onAction="#afficherTousLesEtudiants"
+                        style="-fx-background-color: #f39c12; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;" />
+                <Button text="Retour" onAction="#handleRetour"
+                        style="-fx-background-color: #c0392b; -fx-text-fill: white;
+                           -fx-font-weight: bold; -fx-background-radius: 8;" />
+            </HBox>
+
+
+        </VBox>
+    </children>
+</Pane>

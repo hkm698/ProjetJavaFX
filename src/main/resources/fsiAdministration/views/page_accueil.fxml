@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="478.0" prefWidth="729.0" style="-fx-background-color: #ffffff;"
+      xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="fsiAdministration.controllers.AccueilController">
+    <children>
+        <VBox layoutX="-1.0" prefHeight="48.0" prefWidth="729.0">
+            <effect>
+                <DropShadow color="#02401055" radius="5"/>
+            </effect>
+            <children>
+                <HBox alignment="CENTER_LEFT" style="-fx-background-color: transparent;">
+                    <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/FSI_logo.png"/>
+                        </image>
+                    </ImageView>
+                    <MenuBar prefHeight="40.0" prefWidth="689.0" style="-fx-background-color: transparent;">
+                        <menus>
+                            <Menu fx:id="gestionEtud" mnemonicParsing="false" text="Gestion étudiant" style="-fx-text-fill: #024010;">
+                                <items>
+                                    <MenuItem fx:id="bListeEtud" mnemonicParsing="false" onAction="#bListEtudClick" text="Liste des étudiants" />
+                                    <MenuItem fx:id="bAjouterEtud" mnemonicParsing="false" onAction="#bAjouterEtudClick" text="Ajouter un étudiant" />
+                                </items>
+                            </Menu>
+                            <Menu fx:id="gestionSection" mnemonicParsing="false" text="Gestion section" style="-fx-text-fill: #024010;">
+                                <items>
+                                    <MenuItem fx:id="bListeSection" mnemonicParsing="false" onAction="#bListeSectionClick" text="Liste des sections" />
+                                    <MenuItem fx:id="bAjouterSection" mnemonicParsing="false" onAction="#bAjouterSectionClick" text="Ajouter une section" />
+                                </items>
+                            </Menu>
+                            <Menu fx:id="gestionCours" mnemonicParsing="false" text="Gestion Cours" style="-fx-text-fill: #024010;">
+                                <items>
+                                    <MenuItem fx:id="bListeCours" mnemonicParsing="false" onAction="#bListeCoursClick" text="Liste des cours" />
+                                    <MenuItem fx:id="bAjouterCours" mnemonicParsing="false" onAction="#bAjouterCoursClick" text="Ajouter un cours" />
+                                </items>
+                            </Menu>
+                            <Menu fx:id="bAutres" mnemonicParsing="false" text="Autres" style="-fx-text-fill: #024010;">
+                                <items>
+                                    <MenuItem fx:id="bQuitter" mnemonicParsing="false" onAction="#bQuitterClick" text="Quitter" />
+                                </items>
+                            </Menu>
+                        </menus>
+                    </MenuBar>
+                </HBox>
+            </children>
+        </VBox>
+
+        <VBox alignment="CENTER" layoutY="100.0" prefWidth="729.0" spacing="20">
+            <children>
+                <ImageView fitHeight="120.0" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/FSI_logo.png" />
+                    </image>
+                </ImageView>
+
+                <Label fx:id="labelBienvenue" alignment="CENTER" prefHeight="40.0" prefWidth="729.0"
+                       text="BIENVENUE Utiliseur connecté" textFill="#024010" style="-fx-font-weight: bold;">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                    <effect>
+                        <DropShadow color="#02401022" radius="3"/>
+                    </effect>
+                </Label>
+
+                <Label alignment="CENTER" prefHeight="40.0" prefWidth="729.0"
+                       text="dans l'application de gestion administratif FSI" textFill="#024010"
+                       style="-fx-font-weight: bold;">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <effect>
+                        <DropShadow color="#02401022" radius="3"/>
+                    </effect>
+                </Label>
+            </children>
+        </VBox>
+
+    </children>
+</Pane>
