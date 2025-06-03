@@ -24,9 +24,9 @@ public class Session {
     }
 
     // --- Connexion centralisée à la base de données ---
-    private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "69150aymen";
+    private static final String URL = "jdbc:postgresql://172.20.102.201:5432/P2025_FSI_G4";
+    private static final String USER = "groupe1";
+    private static final String PASSWORD = "2SIO_ORT";
     private static Connection connection;
 
     /**
@@ -62,3 +62,8 @@ public class Session {
         }
     }
 }
+
+/**private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
+ private static final String USER = "postgres";
+ private static final String PASSWORD = "69150aymen";
+ private static Connection connection;*/
